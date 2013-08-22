@@ -42,7 +42,7 @@ you will need to manually delete the instances for now. Like I said, alpha code.
 *Note:  Before you run this option, you will need to create and store the master and node customer images in your bucket and set
 the name of the images in `MASTER_IMAGE_NAME` and `NODE_IMAGE_NAME`.  The instances to make the custom image from are just the
 master and node instances created by this script (without the '-i' option).  You can use any node instance.  Directions
-for saving a custom image from an instance are [here][2]*
+for saving a custom image from an instance are [here][2]*.
 
 ##Dependencies
 
