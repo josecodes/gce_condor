@@ -7,5 +7,7 @@ that functionality. One day Starcluster may support GCE, but for now I am using 
 
 ##Installation
 
+1. Upload *startup.sh*, 'master_00debconf', and 'node_00debconf' to you Google Cloud Storage Bucket.
 
+2.
 
