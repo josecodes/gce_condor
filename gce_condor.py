@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2012 Jose Cortez
+# Copyright 2013 Jose Cortez
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ import argparse
 CLIENT_SECRETS = 'client_secrets.json'
 OAUTH2_STORAGE = 'oauth2.dat'
 GCE_SCOPE = 'https://www.googleapis.com/auth/compute'
-PROJECT_ID = 'cool-plasma-234'
+PROJECT_ID = '<your project here>'
 API_VERSION = 'v1beta15'
 GCE_URL = 'https://www.googleapis.com/compute/%s/projects/' % (API_VERSION)
 DEFAULT_ZONE = 'us-central1-a'
@@ -63,7 +63,7 @@ NODE_CONDOR_DEBCONF = 'node_00debconf'
 MASTER_INSTANCE_NAME = 'master'
 NODE_INSTANCE_NAME = 'node'
 
-CS_BUCKET = 'gce_condor'
+CS_BUCKET = '<your bucket here>'
 STARTUP_SCRIPT = 'startup.sh'
 
 
