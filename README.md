@@ -40,7 +40,7 @@ Before you run gce_condor, you will need to create and place a *client_secrets.j
 
 ####To terminate the cluster:
 
-    .gce_condor terminate
+    ./gce_condor terminate
 
 *WARNING:  currently this terminates ALL instances in the project. If you have other stuff going on in your project,
 you will need to manually delete the instances for now. Like I said, very alpha code...*
