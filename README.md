@@ -60,7 +60,7 @@ instance are [here][2]*.
 
 ####To access the cluster
 
-If you want to, you know, actually use the cluster, you will need to use gcutil:
+If you want to, you know, actually use the cluster, you will need to use [gcutil][6]:
 
 Access the master instance:
 
