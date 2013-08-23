@@ -23,8 +23,8 @@ tasks.  GCE currently offers single core instances. More info on this issue [her
 ##Usage
 
 
-*WARNING: This is very alpha code that starts up things that charge money by the minute.  Double-check via Console
- console or gcutil that the instances are actually terminated when it says it is!*
+*WARNING: This is very alpha code that starts up things that charge dinero by the minute.  Double-check via Console
+or gcutil that the instances are actually terminated!*
 
 Before you run gce_condor, you will need to create and place a *client_secrets.json* file in the same
  directory. Directions for creating the *clients_secrets.json* file are [here][1].
