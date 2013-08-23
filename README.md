@@ -6,13 +6,9 @@ MIT's excellent Starcluster library was used as inspiration to start this; curre
  that functionality. One day Starcluster may support GCE, but for now I am using these simple scripts to get my Condor
  cluster up and running on GCE.
 
-A basic summary:  Given the number of nodes, *gce_condor.py* uses *startup.sh* as a start up script for the
+A basic code summary:  Given the number of instances, *gce_condor.py* uses *startup.sh* as a start up script for
  each instance.  *startup.sh* installs Condor using debian's apt-get installer and then puts the master and node debian
  configuration files on the appropriate instances.
-
-Currently, the "terminate" command is very basic; it deletes ALL instances in the specified project. If this behavior
-does not work for your needs, you will need to manually shutdown the instances via Console or gcutil as needed until a
-more sophisticated version of the code is up.
 
 The long-term project goal is to make it easy to have a super-computer be summoned on-the-fly when needed for a task.
 GCE currently has several advantages over EC2 for doing this:
