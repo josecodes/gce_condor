@@ -86,15 +86,15 @@ When using the `-i` option, the instances are instead booted from their respecti
 ###Adding software to the instances
 
 To install new software such as *gfortran* or *numpy*, add the appropriate line in *startup.sh*.  If boot from image is
- desired, you will have to first run `gce_condor.py` once without the `-i` option to create the newly configured instances from
- start-up script, and then make the updated images from the newly configured instances.
+ desired, you will have to first run `gce_condor.py` once without the `-i` option to create the instances from
+ newly configured start-up script, and then make the updated images from the newly configured instances.
 
 
 ###Condor Configuration
 In the almost certain event that you need to re-configure Condor, you will need to modify the master__00debconf
 and node_00debconf files to your liking. If boot from image is
- desired, you will have to first run `gce_condor.py` once without the `-i` option to create the newly configured instances from
- start-up script, and then make the updated images from the newly configured instances.
+ desired, you will have to first run `gce_condor.py` once without the `-i` option to create the instances from
+ newly configured start-up script, and then make the updated images from the newly configured instances.
 
 
 ##Dependencies
