@@ -76,7 +76,7 @@ Access one of the node instances:
 
 When issuing the default `./gce_condor start` command without the `-i` option, the file *startup.sh* is used as a start up script for
  each instance.  *startup.sh* installs Condor using debian's apt-get installer, puts the master and node debian
- configuration files on the appropriate instances, and restarts condor.
+ configuration files on the appropriate instances, and restarts Condor.
 
 When using the `-i` option, the instances are instead booted from their respective images specified in `MASTER_IMAGE_NAME` and
  `NODE_IMAGE_NAME`. This means that the files *startup.sh*, *master_00debconf*, and *node_00debconf* are NOT used.
