@@ -21,7 +21,7 @@ tasks.  GCE currently offers single core instances. More info on this issue [her
 2. Download file
 3. Upload *startup.sh*, *master_00debconf*, and *node_00debconf* to your Google Cloud Storage Bucket.
 4. In *gce_condor.py*, set `PROJECT_ID` to the name of your project and `CS_BUCKET` to the name of your bucket. You
-can also change other settings in there like zone, machine type, etc later if you wish, but these two are required.
+can also change other settings in there like zone, machine type, etc later as needed, but these two changes are required.
 
 ##Usage
 
