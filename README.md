@@ -60,34 +60,34 @@ instance are [here][2]*.
 ###Booting from start-up script vs custom image
 
 When issuing the default `./gce_condor start` command without the `-i` option, the file *startup.sh* is used as a start up script for
- each instance.  *startup.sh* installs Condor using debian's apt-get installer and then puts the master and node debian
+ each instance.  *startup.sh* installs Condor using debian's apt-get installer, puts the master and node debian
  configuration files on the appropriate instances, and restarts condor.
 
 When using the `-i` option, the instances are instead booted from their respective images specified in `MASTER_IMAGE_NAME` and
  `NODE_IMAGE_NAME`. This means that the files *startup.sh*, *master_00debconf*, and *node_00debconf* are NOT used.
- As explained in the next couple sections, anytime these files are changed, the images must be updated to reflect
+ As explained in the next couple sections, any time these files are changed, the images must be updated to reflect
  those changes (if a boot from image is desired).
 
 ###Adding software to the instances
 
 To install new software such as *gfortran* or *numpy*, add the appropriate line in *startup.sh*.  If boot from image is
- desired, you will have to first run `gce_condor.py` without the `-i` option to create the newly configured instances from
+ desired, you will have to first run `gce_condor.py` once without the `-i` option to create the newly configured instances from
  start-up script, and then make the updated images from the newly configured instances.
 
 
 ###Condor Configuration
 In the almost certain event that you need to re-configure Condor, you will need to modify the master__00debconf
 and node_00debconf files to your liking. If boot from image is
- desired, you will have to first run `gce_condor.py` without the `-i` option to create the newly configured instances from
+ desired, you will have to first run `gce_condor.py` once without the `-i` option to create the newly configured instances from
  start-up script, and then make the updated images from the newly configured instances.
 
 
 ##Dependencies
 
-1. gcutil
-
+1. [Google APIs Client Library for Python][4]
 
 
 [1]: https://developers.google.com/compute/docs/api/python_guide#authorization
 [2]: https://developers.google.com/compute/docs/images#installinganimage
 [3]: http://stackoverflow.com/questions/17007062/memory-intense-jobs-scaling-poorly-on-multi-core-cloud-instances-ec2-gce-rack
+[4]: https://code.google.com/p/google-api-python-client/
