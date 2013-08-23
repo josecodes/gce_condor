@@ -19,8 +19,9 @@ tasks.  GCE currently offers single core instances. More info on this issue [her
 
 1. Install [Google API's Library for Python][4], [gsutil][5], and [gcutil][5] if you haven't already.
 2. Download file
-1. Upload *startup.sh*, *master_00debconf*, and *node_00debconf* to your Google Cloud Storage Bucket.
-2. In *gce_condor.py*, set `PROJECT_ID` to the name of your project and `CS_BUCKET` to the name of your bucket.
+3. Upload *startup.sh*, *master_00debconf*, and *node_00debconf* to your Google Cloud Storage Bucket.
+4. In *gce_condor.py*, set `PROJECT_ID` to the name of your project and `CS_BUCKET` to the name of your bucket. You
+can also change other settings in there like zone, machine type, etc later if you wish, but these two are required.
 
 ##Usage
 
@@ -57,7 +58,7 @@ are the instances created by this script without the `-i` option.  So just run g
 and then save an image of the master and node. You can use any node instance.  Directions for saving a custom image from an
 instance are [here][2]*.
 
-###To access the cluster
+####To access the cluster
 
 If you want to, you know, actually use the cluster, you will need to use gcutil:
 
