@@ -11,8 +11,8 @@ A basic summary:  Given the number of nodes, *gce_condor.py* uses *startup.sh* a
  configuration files on the appropriate instances.
 
 Currently, the "terminate" command is very basic; it deletes ALL instances in the specified project. If this behavior
-does not work for your needs, you will need to manually shutdown the instances as needed until a more sophisticated version
-of the code is up.
+does not work for your needs, you will need to manually shutdown the instances via Console or gcutil as needed until a
+more sophisticated version of the code is up.
 
 The long-term project goal is to make it easy to have a super-computer be summoned on-the-fly when needed for a task.
 GCE currently has several advantages over EC2 for doing this:
@@ -31,7 +31,7 @@ tasks.  GCE currently offers single core instances. More info on this issue [her
 ##Usage
 
 
-*WARNING: This is very alpha code that starts up things that charge money by the minute.  Double-check via Google's cloud
+*WARNING: This is very alpha code that starts up things that charge money by the minute.  Double-check via Console
  console or gcutil that the instances are actually terminated when it says it is!*
 
 Before you run gce_condor, you will need to create and place a *client_secrets.json* file in the same
