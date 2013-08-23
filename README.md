@@ -91,10 +91,9 @@ To install new software such as *gfortran* or *numpy*, add the appropriate line 
 
 
 ###Condor Configuration
-In the almost certain event that you need to re-configure Condor, you will need to modify the master__00debconf
-and node_00debconf files to your liking. If boot from image is
- desired, you will have to first run `gce_condor.py` once without the `-i` option to create the instances from
- newly configured start-up script, and then make the updated images from these instances.
+In the almost certain event that you need to configure Condor to your liking, you will need to modify the master__00debconf
+and node_00debconf files. If boot from image is desired, you will have to first run `gce_condor.py` once without
+the `-i` option to create the instances from newly configured start-up script, and then make the updated images from these instances.
 
 
 ##Dependencies
