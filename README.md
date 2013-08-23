@@ -44,8 +44,8 @@ you will need to manually delete the instances for now. Like I said, very alpha 
 
 ####To create a 10 node cluster from image:
 
-This command uses custom images instead of a start up script to create the instances. This *should* be faster, especially
- as more software is needed on the instance.
+This command uses custom images instead of a start up script to create the instances. This *should* be faster than a
+boot using a start-up script, especially as more software is needed to be on the instance.
 
     /gce_condor.py start -i 10
 
