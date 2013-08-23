@@ -1,9 +1,9 @@
 #GceCondor
 
-A python script that helps start and terminate a simple Condor cluster on Google Compute Engine (GCE).
+A python script that helps start and terminate a basic Condor cluster on Google Compute Engine (GCE).
 
 MIT's excellent Starcluster library was used as inspiration to start this; currently, GceCondor is just a teeny-tiny subset of
- Starcluster's functionality. One day Starcluster may support GCE, but for now I am using these simple scripts to get a Condor
+ Starcluster's functionality. One day Starcluster may support GCE, but for now I am using these scripts to get a Condor
  cluster up and running on GCE.
 
 The long-term project goal is to make it easy to have a super-computer be summoned on-the-fly when needed for a task.
@@ -17,6 +17,8 @@ tasks.  GCE currently offers single core instances. More info on this issue [her
 
 ##Installation
 
+1. Install [Google API's Library for Python][4], [gsutil][5], and [gcutil][5] if you haven't already.
+2. Download file
 1. Upload *startup.sh*, *master_00debconf*, and *node_00debconf* to your Google Cloud Storage Bucket.
 2. In *gce_condor.py*, set `PROJECT_ID` to the name of your project and `CS_BUCKET` to the name of your bucket.
 
@@ -24,7 +26,7 @@ tasks.  GCE currently offers single core instances. More info on this issue [her
 
 
 *WARNING: This is very alpha code that starts up things that charge dinero by the minute.  Double-check via Console
-or gcutil that the instances are actually terminated!*
+or gcutil that the instances are actually terminated when you want them to be!*
 
 Before you run gce_condor, you will need to create and place a *client_secrets.json* file in the same
  directory. Directions for creating the *clients_secrets.json* file are [here][1].
@@ -54,6 +56,18 @@ the name of the images in `MASTER_IMAGE_NAME` and `NODE_IMAGE_NAME`.  The master
 are the instances created by this script without the `-i` option.  So just run gce_condor without `-i` to create the instances,
 and then save an image of the master and node. You can use any node instance.  Directions for saving a custom image from an
 instance are [here][2]*.
+
+###To access the cluster
+
+If you want to, you know, actually use the cluster, you will need to use gcutil:
+
+Access the master instance:
+
+    gcutil ssh master
+
+Access one of the node instances:
+
+    gctuil ssh node001
 
 ##Advanced Detail
 
@@ -85,9 +99,13 @@ and node_00debconf files to your liking. If boot from image is
 ##Dependencies
 
 1. [Google APIs Client Library for Python][4]
+2. [gsutil][5]
+3. [gcutil][6]
 
 
 [1]: https://developers.google.com/compute/docs/api/python_guide#authorization
 [2]: https://developers.google.com/compute/docs/images#installinganimage
 [3]: http://stackoverflow.com/questions/17007062/memory-intense-jobs-scaling-poorly-on-multi-core-cloud-instances-ec2-gce-rack
 [4]: https://code.google.com/p/google-api-python-client/
+[5]: https://developers.google.com/storage/docs/gsutil_install
+[6]: https://developers.google.com/compute/docs/gcutil/#install

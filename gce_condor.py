@@ -41,7 +41,7 @@ GCE_SCOPE = 'https://www.googleapis.com/auth/compute'
 PROJECT_ID = '<your project here>'
 API_VERSION = 'v1beta15'
 GCE_URL = 'https://www.googleapis.com/compute/%s/projects/' % (API_VERSION)
-DEFAULT_ZONE = 'us-central1-a'
+DEFAULT_ZONE = 'us-central1-b'
 
 # New instance properties
 DEFAULT_MACHINE_TYPE = 'n1-standard-1'
