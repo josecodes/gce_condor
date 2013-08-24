@@ -23,7 +23,7 @@ Google's Getting Started example python code for was used as a starting
 point for this class.
 """
 
-__author__ = 'jose.cortez@gmail.com (Jose Cortez)'
+__author__ = 'jose period cortez atsign gmail period com (Jose Cortez)'
 
 import sys
 from time import sleep
