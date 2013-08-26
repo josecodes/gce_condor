@@ -7,14 +7,12 @@ MIT's excellent Starcluster library was used as inspiration to start this; curre
  cluster up and running on GCE.
 
 The long-term project goal is to make it easy to have a super-computer be summoned on-the-fly when needed for a task.
-GCE currently has several advantages over EC2 for doing this:
+Bring on the Singularity.  GCE currently has several advantages over EC2 in this respect:
 
 1.  Being billed by the minute instead of hour makes the cost considerations easier to figure out for a given task.
 2.  We have had very high reliability on GCE instances compared to EC2 so far, especially regarding Spot instances.
 3.  We have seen much better performance per core when using single core instances versus multi core instances for our
-tasks.  GCE currently offers single core instances. More info on this issue [here][3].
-
-Bring on the Singularity.
+tasks.  GCE offers single core instances. More info on this issue [here][3].
 
 ##Installation
 
@@ -95,6 +93,12 @@ To install new software such as *gfortran* or *numpy*, add the appropriate line 
 In the almost certain event that you need to configure Condor to your liking, you will need to modify the master__00debconf
 and node_00debconf files. If boot from image is desired, you will have to first run `gce_condor.py` once without
 the `-i` option to create the instances from newly configured start-up script, and then make the updated images from these instances.
+
+##Next Steps
+
+The next steps might be to add a flag for automatically zipping up the current working directory, unpacking on the
+master node, and then transporting it back.  Not sure if that muddles things a bit; it might just be a cleaner design
+expectation to have all inputs and outputs be on cloud storage.  Hmmmmmm...
 
 
 ##Dependencies
