@@ -7,7 +7,7 @@ MIT's excellent Starcluster library was used as inspiration to start this; curre
  cluster up and running on GCE.
 
 The long-term project goal is to make it easy to have a super-computer be summoned on-the-fly when needed for a task.
-Bring on the Singularity.  GCE currently has several advantages over EC2 in this respect:
+Bring on the Singularity.  GCE currently has several advantages over EC2 in regards to on-demand computing:
 
 1.  Being billed by the minute instead of hour makes the cost considerations easier to figure out for a given task.
 2.  We have had very high reliability on GCE instances compared to EC2 so far, especially regarding Spot instances.
