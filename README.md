@@ -14,6 +14,7 @@ GCE currently has several advantages over EC2 for doing this:
 3.  We have seen much better performance per core when using single core instances versus multi core instances for our
 tasks.  GCE currently offers single core instances. More info on this issue [here][3].
 
+Bring on the Singularity.
 
 ##Installation
 
