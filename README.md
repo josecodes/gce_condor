@@ -97,8 +97,8 @@ the `-i` option to create the instances from newly configured start-up script, a
 ##Next Steps
 
 The next steps might be to add a flag for automatically zipping up the current working directory, unpacking on the
-master node, and then transporting it back.  Not sure if that muddles things a bit; it might just be a cleaner design
-expectation to have all inputs and outputs be on cloud storage.  Hmmmmmm...
+master node, and then transporting it back.  Not sure if that muddles things a bit; it might just be a better design
+expectation to have all inputs and outputs be on cloud storage to keep things cleaner.  Hmmmmmm...
 
 
 ##Dependencies
