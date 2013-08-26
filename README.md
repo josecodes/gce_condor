@@ -17,7 +17,7 @@ tasks.  GCE currently offers single core instances. More info on this issue [her
 
 ##Installation
 
-1. Install [Google API's Library for Python][4], [gsutil][5], and [gcutil][5] if you haven't already.
+1. Install [Google API's Library for Python][4], [gsutil][5], and [gcutil][5].
 2. Download and unpack gce_condor zip.
 3. Upload *startup.sh*, *master_00debconf*, and *node_00debconf* to your Google Cloud Storage Bucket.
 4. In *gce_condor.py*, set `PROJECT_ID` to the name of your project and `CS_BUCKET` to the name of your bucket. You
