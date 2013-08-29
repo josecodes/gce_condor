@@ -13,4 +13,5 @@ gsutil cp gs://$CS_BUCKET/$CONDOR_DEBCONF ./00debconf
 sudo mv 00debconf /etc/condor/config.d/
 sudo /etc/init.d/condor restart
 
-sudo apt-get -q -y install gfortran
+#example for adding extra software
+#sudo apt-get -q -y install gfortran
