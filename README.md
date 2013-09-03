@@ -3,7 +3,7 @@
 A python script that helps start and terminate a basic Condor cluster on Google Compute Engine (GCE).
 
 MIT's excellent Starcluster library was used as inspiration to start this; currently, GceCondor is just a teeny-tiny subset of
- Starcluster's functionality. One day Starcluster may support GCE, but for now I am using these scripts to get a Condor
+ Starcluster's functionality. One day Starcluster may support GCE, but for now I am using this code to get a Condor
  cluster up and running on GCE.
 
 The long-term project goal is to make it easy to have a super-computer be summoned on-the-fly when needed for a task.
