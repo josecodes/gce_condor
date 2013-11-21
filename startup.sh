@@ -6,6 +6,7 @@ CONDOR_DEBCONF=$(curl http://metadata/computeMetadata/v1beta1/instance/attribute
 
 sudo apt-get udpate
 echo "condor condor/wantdebconf boolean false" | sudo debconf-set-selections
+sudo apt-get -q -y install libvirt0=0.9.12-11
 sudo apt-get -q -y install condor
 
 sudo gsutil -n update

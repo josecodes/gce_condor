@@ -29,7 +29,7 @@ can also change other settings in there like zone, machine type, etc later as ne
 or gcutil that the instances are actually terminated when you want them to be!*
 
 Before you run gce_condor, you will need to create and place a *client_secrets.json* file in the same
- directory. Directions for creating the *clients_secrets.json* file are [here][1].
+ directory. Directions for creating the *client_secrets.json* file are [here][1].
 
 ###Examples:
 
