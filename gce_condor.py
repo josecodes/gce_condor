@@ -30,7 +30,8 @@ from time import sleep
 import httplib2
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
-from oauth2client.tools import run
+from oauth2client.tools import run_flow
+from oauth2client.tools import argparser
 from apiclient.discovery import build
 import argparse
 
@@ -80,6 +81,14 @@ class GceCondor(object):
         self.auth_http = auth_http
         self.project_id = project_id
         self.project_url = '%s%s' % (GCE_URL, self.project_id)
+
+    def set_auth_http(self, auth_http):
+        """Update the authorized instance of Http
+
+            Args:
+            auth_http: an authorized instance of Http
+        """
+        self.auth_http = auth_http
 
     def start_cluster(self, node_count, from_image=False):
         """Start a GCE condor cluster given the number of nodes
@@ -250,20 +259,11 @@ class GceCondor(object):
 
 
 def main(argv):
-    # Perform OAuth 2.0 authorization.
-    flow = flow_from_clientsecrets(CLIENT_SECRETS, scope=GCE_SCOPE)
-    storage = Storage(OAUTH2_STORAGE)
-    credentials = storage.get()
-
-    if credentials is None or credentials.invalid:
-        credentials = run(flow, storage)
-    http = httplib2.Http()
-    auth_http = credentials.authorize(http)
-
-    gce_cluster = GceCondor(auth_http, PROJECT_ID)
+    # create the orchestration object
+    gce_cluster = GceCondor(None, PROJECT_ID)
 
     # create the top-level parser
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(parents=[argparser])
     subparsers = parser.add_subparsers()
 
     # create the parser for the "start_cluster" command
@@ -273,11 +273,25 @@ def main(argv):
     parser_start.set_defaults(func=gce_cluster.start)
 
     # create the parser for the "terminate" command
-    parser_terminate = subparsers.add_parser('terminate',
-                                             help="shutdown cluster, ie terminate all instances in project")
+    parser_terminate = subparsers.add_parser('terminate', help="shutdown cluster, ie terminate all instances in project")
     parser_terminate.set_defaults(func=gce_cluster.terminate)
 
     args = parser.parse_args(argv)
+
+    # Perform OAuth 2.0 authorization.
+    flow = flow_from_clientsecrets(CLIENT_SECRETS, scope=GCE_SCOPE)
+    storage = Storage(OAUTH2_STORAGE)
+    credentials = storage.get()
+
+    if credentials is None or credentials.invalid:
+        credentials = run_flow(flow, storage, args)
+    http = httplib2.Http()
+    auth_http = credentials.authorize(http)
+
+    # update the orchestration object with the authorized Http object
+    gce_cluster.set_auth_http(auth_http)
+
+    # perform the command
     args.func(args)
 
 
